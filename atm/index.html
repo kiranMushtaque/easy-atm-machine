@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="atm-container">
+        <h1>Welcome to the ATM Machine!</h1>
+        <div id="insert-card">
+            <button onclick="startTransaction()">Insert Your Card</button>
+        </div>
+
+        <div id="language-selection" style="display:none;">
+            <label for="language">Select Language:</label>
+            <select id="language">
+                <option value="English">English</option>
+                <option value="Urdu">Urdu</option>
+            </select>
+            <button onclick="setLanguage()">Submit</button>
+        </div>
+
+        <div id="pin-entry" style="display:none;">
+            <label for="pin">Enter Your Pin:</label>
+            <input type="text" id="pin" maxlength="4" />
+            <button onclick="verifyPin()">Submit</button>
+            <button onclick="clearPin()">Clear</button>
+        </div>
+
+        <div id="account-type-selection" style="display:none;">
+            <label for="account-type">Select Account Type:</label>
+            <select id="account-type">
+                <option value="Current">Current</option>
+                <option value="Saving">Saving</option>
+            </select>
+            <button onclick="selectAccountType()">Submit</button>
+        </div>
+
+        <div id="transaction-options" style="display:none;">
+            <h3>Select Transaction</h3>
+            <button onclick="fastCash()">Fast Cash</button>
+            <button onclick="withdraw()">Withdraw</button>
+            <button onclick="checkBalance()">Check Balance</button>
+            <button onclick="exitATM()">Exit</button>
+        </div>
+
+        <div id="transaction-detail" style="display:none;">
+            <div id="fast-cash" style="display:none;">
+                <label for="amount">Select Amount:</label>
+                <select id="amount">
+                    <option value="1000">1000</option>
+                    <option value="2000">2000</option>
+                    <option value="3000">3000</option>
+                    <option value="4000">4000</option>
+                    <option value="5000">5000</option>
+                </select>
+                <button onclick="processFastCash()">Submit</button>
+            </div>
+
+            <div id="withdraw-amount" style="display:none;">
+                <label for="withdraw">Enter Amount:</label>
+                <input type="number" id="withdraw" />
+                <button onclick="processWithdraw()">Submit</button>
+            </div>
+        </div>
+
+        <div id="balance-display" style="display:none;">
+            <p id="balance-text"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
